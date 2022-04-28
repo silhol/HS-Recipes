@@ -1,6 +1,6 @@
 # Helsingin Sanomat Recipe Extractor
 
-The Helsingin Sanomat (HS) has a wide range of nice recipes. When I cook, I like to print them out, so that I do not have to touch with fatty fingers my phone. But if one prints out the HS recipe pages, then one gets not only the one rececipe you like, but many other stuff that is of less interest for the cooking. The intend of this script is to keep your phone clean from grease & sauce and to print only one page of paper instead of 10.
+The finnish Helsingin Sanomat (HS) has a wide range of nice recipes. When I cook, I like to print them out, so that I do not have to touch with greasy fingers my phone. But if one prints out the HS recipe pages, then one gets not only the one rececipe you like, but many other stuff that is of less interest for the cooking. The intend of this script is to keep your phone clean from grease & sauce and to print only one page of paper instead of 10 or more
 
 The script should work with the current recipes of HS and with most older pages.
 
@@ -17,10 +17,10 @@ Then they should go directly to the printer.
 
 ## Technical Details
 
-We used Pycharm and Windows. A wide range of modules have been loaded.
+We used Pycharm and Windows. A wide range of modules have been loaded (under pycharm you have to add them under settings!)
 
 ## Note of copyright
 
-The recipes are of course property of HS.
+The recipes are of course property of HS and this script is only to reduce the paper waste compared to "normal print".
 
 April 2022
