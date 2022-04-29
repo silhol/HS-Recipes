@@ -10,7 +10,7 @@
 # without paywall: https://www.hs.fi/ruoka/reseptit/art-2000008160097.html (starting here)
 # without paywall: https://www.hs.fi/ruoka/art-2000008229534.html
 # without paywall: https://www.hs.fi/ruoka/art-2000008205463.html
-# Kartoffelrezept: https://www.hs.fi/ruoka/art-2000008205467.html
+# Peruna: https://www.hs.fi/ruoka/art-2000008205467.html
 
 # Implementation Plan:
 # Step 1: Ask user for URL
