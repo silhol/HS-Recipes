@@ -7,7 +7,7 @@
 # BBQ: https://www.hs.fi/ruoka/art-2000008022816.html
 # Salattia: https://www.hs.fi/ruoka/art-2000008008508.html
 # Gazpacho: https://www.hs.fi/ruoka/art-2000008022959.html  (BEHIND PAYWALL)
-# without paywall: https://www.hs.fi/ruoka/reseptit/art-2000008160097.html (starting here)
+# without paywall: https://www.hs.fi/ruoka/reseptit/art-2000008160097.html 
 # without paywall: https://www.hs.fi/ruoka/art-2000008229534.html
 # without paywall: https://www.hs.fi/ruoka/art-2000008205463.html
 # Peruna: https://www.hs.fi/ruoka/art-2000008205467.html
