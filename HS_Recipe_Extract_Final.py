@@ -1,5 +1,5 @@
 ## This python script extracts from HS the recipes and stores them in a text file for printing
-# Each recipe is stored in a different file
+# Each recipe is stored in a different txt file
 # Some recipes are behind a paywall, for those one needs to login first before calling this program
 
 # Recipes for testing:
