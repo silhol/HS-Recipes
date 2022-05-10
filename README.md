@@ -4,7 +4,7 @@ The finnish Helsingin Sanomat (HS) has a wide range of nice recipes. When I cook
 
 The script should work with the current recipes of HS and with most older recipe pages of HS.
 
-So my friend (Susanna Kallio) and I created this little python script. Some recipes require you to login (so please do that before you use the script for those recipes that require a login).
+So my friend (Susanna Kallio) and I created this little python script. Some recipes require you to login (so please do that before you use the script for those recipes that require a login!).
 
 ## Functionalities
 
