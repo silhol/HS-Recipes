@@ -8,6 +8,8 @@ So my friend (Susanna Kallio) and I created this little python script. Some reci
 
 ## Functionalities
 
+Start the Python script (remember in pycharm that the modules have to be in place).
+
 You will be requested to insert the URL with the recipe.
 You will then be presented with a choice of the found recipes.
 You click which ones you like to print.
