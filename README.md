@@ -25,4 +25,4 @@ We used Pycharm and Windows. A wide range of modules have been loaded (under pyc
 
 The recipes are of course property of HS and this script is only to reduce the paper waste compared to "normal print".
 
-April 2022
+June 2022
