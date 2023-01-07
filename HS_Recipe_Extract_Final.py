@@ -1,5 +1,5 @@
 ## This python script extracts from HS the recipes and stores them in a text file for printing
-# Each recipe is stored in a different txt file
+# Each recipe is stored in a different file
 # Some recipes are behind a paywall, for those one needs to login first before calling this program
 
 # Recipes for testing:
@@ -7,10 +7,10 @@
 # BBQ: https://www.hs.fi/ruoka/art-2000008022816.html
 # Salattia: https://www.hs.fi/ruoka/art-2000008008508.html
 # Gazpacho: https://www.hs.fi/ruoka/art-2000008022959.html  (BEHIND PAYWALL)
-# without paywall: https://www.hs.fi/ruoka/reseptit/art-2000008160097.html 
+# without paywall: https://www.hs.fi/ruoka/reseptit/art-2000008160097.html (starting here)
 # without paywall: https://www.hs.fi/ruoka/art-2000008229534.html
 # without paywall: https://www.hs.fi/ruoka/art-2000008205463.html
-# Peruna: https://www.hs.fi/ruoka/art-2000008205467.html
+# Potatoes: https://www.hs.fi/ruoka/art-2000008205467.html
 
 # Implementation Plan:
 # Step 1: Ask user for URL
@@ -53,14 +53,14 @@ def web_page_loader(url):
     # This is needed for web_page_loader and for login_and_get_page functions
     chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
     # and if it doesn't exist, download it automatically, then add chromedriver to path
-    driver= webdriver.Chrome()
+    driver = webdriver.Chrome()
     # driver = webdriver.Chrome(ChromeDriverManager().install()) # always installs
 
     if "hs." not in url: # if this url is not from Hessari
         print("Are you sure you gave the right link for HS ruoka page? Try again.")
         exit()
 
-    try: # if this is not a URL
+    try:  #  if this is not a URL
         html = request.urlopen(url).read().decode('utf8')
     except:
         print("The URL give could not be opened")
@@ -126,7 +126,7 @@ def select_recipe(soup, url):
                 the_file.write(text)
             recipies_dict[otsikko.get_text()] = otsikko_short + '.txt'
         # driver.quit()
-    else: # e.g. for recipes of the form: https://www.hs.fi/ruoka/reseptit/art-2000008444582.html
+    else:  # e.g. for recipes of the form: https://www.hs.fi/ruoka/reseptit/art-2000008444582.html
         page_title = str(soup.title)  # this gives the title of the page, which does not need to be the titel of the recipe
         page_title = page_title.strip('<title>')
         page_title = page_title.strip('- Reseptit | HS.fi</')
@@ -145,9 +145,10 @@ def select_recipe(soup, url):
 
     return recipies_dict, unique_urls
 
-def selection_UI(a_recipies): # a_recipes contains the dictionary of recipies
+
+def selection_UI(a_recipies):  # a_recipes contains the dictionary of recipies
     # https://www.tutorialsteacher.com/python/create-gui-using-tkinter-python (good tutorial on tkinker for UI)
-    data= list(a_recipies.keys())
+    data = list(a_recipies.keys())
     window = Tk()
     # btn = Button(window, text="This is the UI for recipe selection", fg='blue')
     # btn.place(x=80, y=100)
@@ -156,9 +157,9 @@ def selection_UI(a_recipies): # a_recipes contains the dictionary of recipies
     l = len(data)
 
     # Creating a list of the recipes to click
-    i=0
-    v=[]
-    C=[]
+    i = 0
+    v = []
+    C = []
 
     for receipe_t in data:
         v.append(IntVar()) # extend list for i'th element
@@ -178,14 +179,14 @@ def selection_UI(a_recipies): # a_recipes contains the dictionary of recipies
             # Storing the names of the selected recipes
             if v[i].get() != 0: # if selected
                 name_short = data[i][:12]  # shorten the name
-                selected_recipes_list.append(name_short + ".txt") #store file name for selected
+                selected_recipes_list.append(name_short + ".txt")  # store file name for selected
             else:
                 name_short = data[i][:12]
                 not_selected_recipes_list.append(name_short + ".txt") # file names of the not selected for deletion
 
         # remove not needed recipes
         k = 0
-        if not not_selected_recipes_list:  #checks if list is not empty
+        if not not_selected_recipes_list: # checks if list is not empty
             for i in not_selected_recipes_list:
                 os.remove(not_selected_recipes_list[k])
         window.destroy()
@@ -203,6 +204,7 @@ def selection_UI(a_recipies): # a_recipes contains the dictionary of recipies
 
     return selected_recipes_list
 
+
 def print_selected_recipes(file_names):
     # print recipe from pakki-delivery url
     for file in file_names:
@@ -212,6 +214,7 @@ def print_selected_recipes(file_names):
         os.startfile(file, "print")  # this line automatically prints out the selected recipes
         f.close()
     return
+
 
 def main():
 
@@ -230,6 +233,7 @@ def main():
     # print out same recipes dozen of times
     if want_to_print == "y":
         print_selected_recipes(recipes_to_print)
+
 
 if __name__ == "__main__":
     main()
