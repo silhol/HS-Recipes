@@ -8,7 +8,7 @@ So my friend (Susanna Kallio) and I created this little python script. Some reci
 
 ## Functionalities
 
-Start the Python script (remember in pycharm that the modules have to be in place).
+Start the Python script (remember in pycharm that the modules have to be in place i.e. add them via settings).
 
 You will be requested to insert the URL with the recipe.
 You will then be presented with a choice of the found recipes.
@@ -23,6 +23,6 @@ We used Pycharm and Windows. A wide range of modules have been loaded (under pyc
 
 ## Note of copyright
 
-The recipes are of course property of HS and this script is only to reduce the paper waste compared to "normal print".
+The recipes are of course property of HS and this script is only to reduce the paper waste compared to "normal print" (and since HS does not have a nice print button).
 
-June 2022
+January 2023
