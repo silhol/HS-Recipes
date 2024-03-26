@@ -44,6 +44,8 @@ import lxml
 import os
 import chromedriver_autoinstaller
 import selenium
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 
 
 def web_page_loader(url):
@@ -54,13 +56,16 @@ def web_page_loader(url):
     chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
     # and if it doesn't exist, download it automatically, then add chromedriver to path
     driver = webdriver.Chrome()
-    # driver = webdriver.Chrome(ChromeDriverManager().install()) # always installs
+    # driver = webdriver.Chrome(ChromeDriverManager().install())  # always installs
+    # service = Service()
+    # ptions = webdriver.ChromeOptions()
+    # driver = webdriver.Chrome(service=service, options=options)
 
-    if "hs." not in url: # if this url is not from Hessari
+    if "hs." not in url:  # if this url is not from Hessari
         print("Are you sure you gave the right link for HS ruoka page? Try again.")
         exit()
 
-    try:  #  if this is not a URL
+    try:  # if this is not a URL
         html = request.urlopen(url).read().decode('utf8')
     except:
         print("The URL give could not be opened")
@@ -85,14 +90,14 @@ def select_recipe(soup, url):
     page_source_as_text = str(soup)
 
     # search_for="https://pakki-delivery.datadesk.hs.fi/?appI"
-    search_for= "pakki-deli"  # search term for the page
+    search_for = "pakki-deli"  # search term for the page
 
     # https://pakki-delivery.datadesk.hs.fi?appId=f585bb25-0808-4322-9f9d-78e8409e0928 (example URL)
     # we find the "spot" where pakki-deli is, but we extract the rest of the URL
     # they are then found all and put into a list called urls
     urls = [page_source_as_text[i-8:i+72] for i in findall(search_for, page_source_as_text)]
     # this list contains the pakki-urls with the recipes, some double elements in there
-    driver = webdriver.Chrome()
+    # driver = webdriver.Chrome()
 
     # make urls list only to have unique elements
     unique_urls = []
@@ -221,10 +226,22 @@ def main():
     print("Example URL: https://www.hs.fi/ruoka/art-2000008205467.html")
 
     url_to_analyze = input("What HS webpage do you want to extract the recipes from: ")
+    # Works, when browser open and logged in
+
+    # Next few lines are for checking if the webdriver is there and what version.
+    # This is needed for web_page_loader and for login_and_get_page functions
+    chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
+    # and if it doesn't exist, download it automatically, then add chromedriver to path
+    # driver = webdriver.Chrome()
+    # driver = webdriver.Chrome(ChromeDriverManager().install())  # always installs
+    # service = Service()
+    # options = webdriver.ChromeOptions()
+    # driver = webdriver.Chrome(service=service, options=options)
+
     page_content, page_content_lxml = web_page_loader(url_to_analyze)
 
-    all_recipes, returned_urls = select_recipe(page_content, url_to_analyze) #returns receipe dictionary
-    if returned_urls: # if some recipes were found
+    all_recipes, returned_urls = select_recipe(page_content, url_to_analyze)  # returns recipe dictionary
+    if returned_urls:  # if some recipes were found
         recipes_to_print = selection_UI(all_recipes)
     else:
         recipes_to_print = list(all_recipes.keys())
@@ -233,6 +250,7 @@ def main():
     # print out same recipes dozen of times
     if want_to_print == "y":
         print_selected_recipes(recipes_to_print)
+    # driver.quit()
 
 
 if __name__ == "__main__":
