@@ -6,7 +6,7 @@ The script should work with the current recipes of HS and with most older recipe
 
 So my friend (Susanna Kallio) and I created this little python script. Some recipes require you to login (so please do that before you use the script for those recipes that require a login!).
 
-For smooth working, please update your chrome browser to the newest version.
+For smooth working, please update your chrome browser to the newest version and restart the browser.
 
 ## Functionalities
 
