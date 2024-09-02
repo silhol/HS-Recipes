@@ -6,7 +6,7 @@ The script should work with the current recipes of HS and with most older recipe
 
 So my friend (Susanna Kallio) and I created this little python script. Some recipes require you to login (so please do that before you use the script for those recipes that require a login!).
 
-For smooth working, please update your chrome browser to the newest version and restart the browser. And it also helps to update the packages used by this program (in particular anything related to browser handling).
+For smooth working, please update your chrome browser to the newest version and restart the browser. And it also helps to update the packages used by this program (in particular anything related to browser handling). If you get an error "chrome driver incomptability", thats this issue....
 
 ## Functionalities
 
@@ -21,7 +21,7 @@ Then they should go directly to the printer.
 
 ## Technical Details
 
-We used Pycharm and Windows. A wide range of modules have been loaded (under pycharm you have to add them under settings!)
+We used Pycharm and Windows. A wide range of modules have been loaded (under pycharm you have to add them under settings and also update them!)
 
 ## Note of copyright
 
